@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="sobre/METABEE.png" type="Imagem/png">
+    <title>MetaBee - Educação, Inovação e Robótica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #000;
+        }
+
+        header {
+            background-color: #FFC107;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .logo-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 span {
+            color: #FFC107;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .partners {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .partners-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .partner-knn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .knn-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            border-radius: 50%;
+        }
+
+        .knn-text {
+            font-weight: bold;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .aipath-logo {
+            background: #000;
+            color: white;
+            padding: 12px 25px;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-badge {
+            background: white;
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 18px;
+        }
+
+        .espaco-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .espaco-icon {
+            width: 50px;
+            height: 50px;
+            background: #4CAF50;
+            border-radius: 50%;
+        }
+
+        .espaco-text {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .cta-section {
+            background-color: #000;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .cta-content h2 span {
+            color: #FFC107;
+        }
+
+        .cta-content p {
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FFC107;
+            color: #000;
+            padding: 15px 45px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .about-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .about-hero h1 span {
+            color: #FFC107;
+        }
+
+        .info-section {
+            background-color: #000;
+            max-width: 1200px;
+            padding: 80px 20px;
+            margin: 0 auto;
+
+        }
+
+        .info-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .info-text h2 {
+            color: #FFC107;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .info-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .info-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-text ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #ccc;
+        }
+
+        .info-text ul li::before {
+            content: '•';
+            color: #FFC107;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        .info-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .team-section {
+            background-color: #000;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-section h2 {
+            color: #FFC107;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .team-member {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #333;
+        }
+
+        .team-member:last-child {
+            border-bottom: none;
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #444, #666);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        #imgtime img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .team-info h3 {
+            font-size: 24px;
+            color: #FFC107;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .team-info h4 {
+            font-size: 18px;
+            color: #FFC107;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .services-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .services-hero h1 span {
+            color: #FFC107;
+        }
+
+        .course-section {
+            background-color: #000;
+            padding: 60px 20px;
+        }
+
+        .course-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFC107;
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .course-title {
+            text-align: center;
+            background-color: #000;
+            color: #FFC107;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 0 auto 40px;
+            width: fit-content;
+        }
+
+        .course-details {
+            background-color: #000;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .course-details-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .course-overview,
+        .course-content,
+        .course-reviews {
+            margin-bottom: 50px;
+        }
+
+        .course-overview h2,
+        .course-content h2,
+        .course-reviews h2 {
+            color: #FFC107;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .course-overview-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .course-overview p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .course-info-box {
+            background-color: #FFC107;
+            color: #000;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .enroll-btn {
+            background-color: #000;
+            color: #FFC107;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .enroll-btn:hover {
+            transform: scale(1.05);
+        }
+        .contact-form-section {
+            background-color: #000;
+            padding: 60px 20px 80px;
+        }
+
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form-section h2 {
+            color: #FFC107;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .review-item {
+            background-color: #222;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+               .blog-hero {
+            background-color: #000;
+            color: white;
+            padding: 60px 20px 40px;
+        }
+
+        .blog-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-hero h1 {
+            color: #FFC107;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background-color: #FFC107;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #000;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            background-color: #000;
+            padding: 40px 20px 80px;
+        }
+
+        .blog-grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: #FFC107;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #888, #aaa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        .blog-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        .blog-card-date {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-link {
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .blog-card-link:hover {
+            opacity: 0.7;
+        }
+
+        .contact-section {
+            background-color: #000;
+            color: white;
+            padding: 80px 20px;
+            min-height: 60vh;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            color: #FFC107;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+      .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #FFC107;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #000;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #FFC107;
+            color: #000;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #FFC107;
+            color: #000;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFC107;
+            text-decoration: none;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .info-block,
+            .team-member,
+            .blog-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="showPage('home')">
+                <div class="logo-icon"><img src="sobre/METABEE.png" alt="Logo MetaBee"></div>
+                <div class="logo-text">MetaBee</div>
+            </div>
+            <ul>
+                <li><a onclick="showPage('sobre')">Sobre nós</a></li>
+                <li><a onclick="showPage('cursos')">Cursos</a></li>
+                <li><a onclick="showPage('blog')">Blog</a></li>
+                <li><a onclick="showPage('contato')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>META<span>BEE</span></h1>
+                <p>Educação, inovação e robótica</p>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="partners-grid">
+                <div class="partner-knn">
+                    <div class="knn-logo"></div>
+                    <div class="knn-text">KNN</div>
+                </div>
+                <div class="aipath-logo">
+                    <span class="ai-badge">AI</span>
+                    <span>PATH</span>
+                </div>
+                <div class="espaco-logo">
+                    <div class="espaco-icon"></div>
+                    <div class="espaco-text">ESPAÇO MAKER</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>SEJA NOSSO <span>PARCEIRO</span></h2>
+                <p>Acreditamos na força da colaboração. Se você compartilha nossa paixão por educação, tecnologia e inovação, junte-se à MetaBee!</p>
+                <a onclick="showPage('contato')" class="btn">CONTATO</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaBee</h3>
+                    <p>Todos os direitos reservados</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço:</h3>
+                    <p>Rua Diná Alves Pereira, 351</p>
+                    <p>São José dos Pinhais/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato:</h3>
+                    <p>atendimento@metabee.com.br</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">L</a>
+                        <a href="#" class="social-icon">I</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SOBRE NÓS -->
+    <div id="sobre" class="page">
+        <section class="about-hero">
+            <h1>CONHEÇA NOSSA <span>EMPRESA</span></h1>
+        </section>
+
+        <section class="info-section">
+            <div class="info-block">
+                <div class="info-text">
+                    <h2>QUEM SOMOS</h2>
+                    <p>A MetaBee é um espaço inovador dedicado a capacitar pessoas com habilidades práticas para criar, inovar e empreender.</p>
+                </div>
+                <div class="info-image" id="imgtime"><img src="sobre/FB_IMG_1721351296779.png" alt="Quem somos"></div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-image" id="imgtime"><img src="sobre/clistenes-dando.png" alt="Quem somos"></div>
+                <div class="info-text">
+                    <h2>NOSSO PROPÓSITO</h2>
+                    <p>Formando a próxima geração de criadores e empreendedores.</p>
+                    <ul>
+                        <li>Estar sempre à frente, promovendo novas ideias</li>
+                        <li>Fomentar um ambiente de troca de conhecimentos</li>
+                        <li>Colaborar com parceiros da comunidade maker</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="team-container">
+                <h2>CONHEÇA NOSSA EQUIPE</h2>
+                
+                <div class="team-member">
+                    <div class="team-photo" id="imgtime"><img src="sobre/Clistenes Grizafis.jpg" alt="Foto Clistenes"></div>
+                    <div class="team-info">
+                        <h3>Clístenes Grizafis Bento</h3>
+                        <h4>Presidente e Fundador</h4>
+                        <p>Com vasta experiência no desenvolvimento de AMRs, Clístenes é o principal idealizador da MetaBee.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-photo" id="imgtime"><img src="sobre/Ana caroline.jpg" alt="Ana Caroline"></div>
+                    <div class="team-info">
+                        <h3>Ana Caroline de Paula</h3>
+                        <h4>Diretora Educacional</h4>
+                        <p>Mestre em Educação, responsável pelo desenvolvimento das metodologias didáticas.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-photo" id="imgtime"><img src="sobre/Marcos.png" alt="Marcos Alexander"></div>
+                    <div class="team-info">
+                        <h3>Marcos Alexander de Paula</h3>
+                        <h4>Gerente Administrativo</h4>
+                        <p>Com mais de 20 anos de experiência, responsável pela gestão financeira e operacional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaBee</h3>
+                    <p>Todos os direitos reservados</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço:</h3>
+                    <p>São José dos Pinhais/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato:</h3>
+                    <p>atendimento@metabee.com.br</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CURSOS -->
+    <div id="cursos" class="page">
+        <section class="services-hero">
+            <div style="max-width: 800px;">
+                <h1>CONHEÇA NOSSOS <span>SERVIÇOS</span></h1>
+                <p style="font-size: 16px; margin-top: 20px;">Na MetaBee, oferecemos cursos práticos de robótica e tecnologias inovadoras que preparam você para o futuro.</p>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="course-container">
+                <div class="course-title">Cursos de Robótica</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                    <div style="background: #888; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;"id="imgtime"><img src="sobre/banner_exploradores_da_robotica_v2.png" alt="banner"></div>
+                    <div style="background: #888; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;"id="imgtime"><img src="sobre/robo 2.png" alt="banner"></div>
+                </div>
+            </div>    
+        </section>
+
+        <section class="course-details">
+            <div class="course-details-container">
+                <div class="course-overview">
+                    <h2>VISÃO GERAL DO CURSO</h2>
+                    <div class="course-overview-content">
+                        <div>
+                            <p>Aprenda a modelar, criar e programar robôs móveis usando o Framework ROS. Este curso prático é ideal para quem deseja se destacar na área de robótica e automação.</p>
+                        </div>
+                        <div class="course-info-box">
+                            <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                                <li style="margin-bottom: 15px;">• Online</li>
+                                <li style="margin-bottom: 15px;">• 260 horas</li>
+                                <li style="margin-bottom: 15px;">• R$ 290,00 (assinatura)</li>
+                                <li style="margin-bottom: 15px;">• Oferece certificado</li>
+                            </ul>
+                            <a href="#" class="enroll-btn" style="display: block; text-align: center;">Inscreva-se</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-content">
+                    <h2>CONTEÚDO</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; color: white;"><span style="color: #FFC107; font-weight: bold;">Módulo 1:</span> Cinemática, hardware e ajustes iniciais (16 horas)</li>
+                        <li style="margin-bottom: 15px; color: white;"><span style="color: #FFC107; font-weight: bold;">Módulo 2:</span> Conceitos Básicos do ROS (40 horas)</li>
+                        <li style="margin-bottom: 15px; color: white;"><span style="color: #FFC107; font-weight: bold;">Módulo 3:</span> Modelagem de robô (40 horas)</li>
+                        <li style="margin-bottom: 15px; color: white;"><span style="color: #FFC107; font-weight: bold;">Módulo 4:</span> Navegação Stack (60 horas)</li>
+                    </ul>
+                </div>
+
+                <div class="course-reviews">
+                    <h2>AVALIAÇÕES DO USUÁRIO</h2>
+                    
+                    <div class="review-item">
+                        <div style="width: 50px; height: 50px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">J</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: bold; color: #FFC107; margin-bottom: 5px;">João</div>
+                            <div style="color: #FFC107; margin-bottom: 5px;">★★★★★</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: bold;">5.0</div>
+                    </div>
+
+                    <div class="review-item">
+                        <div style="width: 50px; height: 50px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">M</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: bold; color: #FFC107; margin-bottom: 5px;">Maria</div>
+                            <div style="color: #FFC107; margin-bottom: 5px;">★★★★★</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: bold;">5.0</div>
+                    </div>
+
+                    <div class="review-item">
+                        <div style="width: 50px; height: 50px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">P</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: bold; color: #FFC107; margin-bottom: 5px;">Pedro</div>
+                            <div style="color: #FFC107; margin-bottom: 5px;">★★★★★</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: bold;">5.0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: #000; padding: 60px 20px;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="color: #FFC107; font-size: 32px; margin-bottom: 30px; font-weight: 700;">PERGUNTAS FREQUENTES:</h2>
+                <div style="background-color: #FFC107; color: #000; padding: 20px 30px; margin-bottom: 15px; border-radius: 8px; font-weight: 500;">
+                    Posso fazer o curso mesmo sem conhecimento prévio na área?
+                </div>
+                <div style="background-color: #FFC107; color: #000; padding: 20px 30px; margin-bottom: 15px; border-radius: 8px; font-weight: 500;">
+                    Receberei certificado ao concluir o curso?
+                </div>
+                <div style="background-color: #FFC107; color: #000; padding: 20px 30px; margin-bottom: 15px; border-radius: 8px; font-weight: 500;">
+                    O que está incluído no valor do curso?
+                </div>
+                <div style="background-color: #FFC107; color: #000; padding: 20px 30px; margin-bottom: 15px; border-radius: 8px; font-weight: 500;">
+                    Preciso de um computador muito potente para acompanhar as aulas?
+                </div>
+                <div style="background-color: #FFC107; color: #000; padding: 20px 30px; margin-bottom: 15px; border-radius: 8px; font-weight: 500;">
+                    O que acontece se eu perder uma aula?
+                </div>
+            </div>
+        </section>
+
+         <section class="contact-form-section">
+            <div class="contact-form-container">
+                <h2>AINDA TEM DÚVIDAS?</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="NOME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="ASSUNTO" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaBee</h3>
+                    <p>Todos os direitos reservados</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço:</h3>
+                    <p>Rua Diná Alves Pereira, 351</p>
+                    <p>São José dos Pinhais/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato:</h3>
+                    <p>atendimento@metabee.com.br</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">L</a>
+                        <a href="#" class="social-icon">I</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+       <!-- Blog Page -->
+    <div id="blog" class="page">
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <h1>BLOG</h1>
+                <p>Notícias, atualizações e recursos</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="PESQUISA">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog-grid">
+            <div class="blog-grid-container">
+                <!-- Card 1 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/clistenes-dando.png" alt="Clistenes dando aula"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Conquista Significativa: MetaBee escolhida para sediar o LARC-CBR</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na última semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), evento promovido pela Faculdade FAEL. Contar com especialistas da área…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/turma.png" alt="Turma"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Rota 1: Sucesso da MetaBee! Ganhamos o 2° lugar no Desafio Rota 2030</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na próxima semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), promovido pela Faculdade FAEL. Contar com especialistas da área foi…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/reator stark.png" alt="Reator stark"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Inteligência Artificial: O que Representa na Educação e na Indústria</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">A inteligência artificial (IA) tem se tornado um pilar fundamental em diversos setores, e sua aplicação na educação e na indústria é especialmente…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/clistenes-dando.png" alt="Clistenes dando aula"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Conquista Significativa: MetaBee escolhida para sediar o LARC-CBR</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na última semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), evento promovido pela Faculdade FAEL. Contar com especialistas da área…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/turma.png" alt="Turma"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Rota 1: Sucesso da MetaBee! Ganhamos o 2° lugar no Desafio Rota 2030</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na próxima semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), promovido pela Faculdade FAEL. Contar com especialistas da área foi…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/reator stark.png" alt="Reator stark"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Inteligência Artificial: O que Representa na Educação e na Indústria</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">A inteligência artificial (IA) tem se tornado um pilar fundamental em diversos setores, e sua aplicação na educação e na indústria é especialmente…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/clistenes-dando.png" alt="Clistenes dando aula"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Conquista Significativa: MetaBee escolhida para sediar o LARC-CBR</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na última semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), evento promovido pela Faculdade FAEL. Contar com especialistas da área…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/turma.png" alt="Turma"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Rota 1: Sucesso da MetaBee! Ganhamos o 2° lugar no Desafio Rota 2030</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">Na próxima semana, a MetaBee teve o privilégio de sediar o Workshop Robot Operating System (ROS), promovido pela Faculdade FAEL. Contar com especialistas da área foi…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" id = "imgtime"><img src="sobre/reator stark.png" alt="Reator stark"></div>
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Inteligência Artificial: O que Representa na Educação e na Indústria</h3>
+                        <p class="blog-card-date">23 de Outubro de 2024</p>
+                        <p class="blog-card-text">A inteligência artificial (IA) tem se tornado um pilar fundamental em diversos setores, e sua aplicação na educação e na indústria é especialmente…</p>
+                        <a href="#" class="blog-card-link">Leia mais →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaBee</h3>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço:</h3>
+                    <p>São José dos Pinhais/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato:</h3>
+                    <p>atendimento@metabee.com.br</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CONTATO -->
+    <div id="contato" class="page">
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>ENTRE EM CONTATO</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="NOME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="EMAIL" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="TELEFONE" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="MENSAGEM" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MetaBee</h3>
+                </div>
+                <div class="footer-section">
+                    <h3>Endereço:</h3>
+                    <p>São José dos Pinhais/PR</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato:</h3>
+                    <p>atendimento@metabee.com.br</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">L</a>
+                        <a href="#" class="social-icon">I</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Remove active de todas as páginas
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Adiciona active na página selecionada
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+</body>
+</html>
